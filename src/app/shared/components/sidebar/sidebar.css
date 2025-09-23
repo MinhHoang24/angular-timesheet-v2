@@ -1,0 +1,9 @@
+.main-side-bar {
+    width: 300px;
+    position: fixed;
+    left: 0;
+    top: 72px;
+    height: calc(100vh - 72px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+    background-color: var(--white-color);
+}

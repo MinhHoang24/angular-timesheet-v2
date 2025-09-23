@@ -1,0 +1,43 @@
+.mini-nav a::before {
+    display: none;
+}
+
+.list-component a::before {
+    content: '+';
+    position: absolute;
+    right: var(--size-m);
+    font-size: var(--size-l);
+    color: #747474;
+}
+
+.list-component a.active::before {
+  content: '-';
+}
+
+.list-component a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: var(--size-s) var(--size-m);
+    color: #747474;
+    column-gap: 8px;
+    text-decoration: none;
+}
+
+.list-component a:hover {
+    cursor: pointer;
+}
+
+.list-component a span {
+    font-weight: 700;
+    color: var(--black-color);
+    font-size: 14px;
+}
+
+a.router-link-active {
+    color: var(--primary-color);
+}
+
+.mini-nav {
+    list-style: none;
+}

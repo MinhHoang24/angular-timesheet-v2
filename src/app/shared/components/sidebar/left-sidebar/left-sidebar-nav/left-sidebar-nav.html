@@ -1,0 +1,51 @@
+<div class="menu">
+    <ul class="list">
+        <!-- my-info -->
+        <app-left-sidebar-item
+            title="My information"
+            icon="account_box"
+            [routerLink]="['./my-profile']"
+            [options]="[]"
+        >
+        </app-left-sidebar-item>
+        <!-- admin -->
+        <app-left-sidebar-item
+            title="Admin"
+            icon="admin_panel_settings"
+            [routerLink]="['javascript:void(0);']"
+            [options]="[
+                { label: 'Users', icon: 'admin_panel_settings', link: ['./my-profile'] },
+                { label: 'Users', icon: 'admin_panel_settings', link: ['./admin'] },
+                { label: 'Users', icon: 'admin_panel_settings', link: ['./management'] },
+                { label: 'Users', icon: 'admin_panel_settings', link: ['./timesheet'] },
+            ]"
+        >
+        </app-left-sidebar-item>
+        <!-- timesheet -->
+        <app-left-sidebar-item
+            title="Personal timesheet"
+            icon="account_circle"
+            [routerLink]="['javascript:void(0);']"
+            [options]="[
+                { label: 'Users', icon: 'account_circle', link: [''] },
+                { label: 'Users', icon: 'account_circle', link: [''] },
+                { label: 'Users', icon: 'account_circle', link: [''] },
+                { label: 'Users', icon: 'account_circle', link: [''] },
+            ]"
+        >
+        </app-left-sidebar-item>
+        <!-- management -->
+        <app-left-sidebar-item
+            title="Management"
+            icon="group_work"
+            [routerLink]="['javascript:void(0);']"
+            [options]="[
+                { label: 'Users', icon: 'group_work', link: [''] },
+                { label: 'Users', icon: 'group_work', link: [''] },
+                { label: 'Users', icon: 'group_work', link: [''] },
+                { label: 'Users', icon: 'group_work', link: [''] },
+            ]"
+        >
+        </app-left-sidebar-item>
+    </ul>
+</div>

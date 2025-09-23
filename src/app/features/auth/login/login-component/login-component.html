@@ -1,0 +1,63 @@
+<div class="login-component">
+    <div class="loginWithEmail">
+        <h4>Log in</h4>
+        <div class="login-form">
+            <!-- user name or email -->
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <div class="input-form">
+                    <input 
+                        type="text" name="username" id="username"
+                        [(ngModel)]="loginData.userNameOrEmailAddress"
+                        #usernameModel="ngModel"
+                        required
+                        (focus)="onFocus('username')"
+                        (blur)="onBlur('username')"
+                        [ngClass]="{'error-input': usernameModel?.touched && usernameModel?.invalid}"
+                    >
+                    <label 
+                        for="username" 
+                        [ngClass]="{
+                            'focused': isFocused['username'] || loginData.userNameOrEmailAddress,
+                            'error': usernameModel?.touched && usernameModel?.invalid
+                        }">
+                        UserNameOrEmail <span>*</span>
+                    </label>
+                </div>
+            </div>
+            <!-- password -->
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <div class="input-form">
+                    <input 
+                        type="password" name="password" id="password"
+                        [(ngModel)]="loginData.password"
+                        #passwordModel="ngModel"
+                        required
+                        (focus)="onFocus('password')"
+                        (blur)="onBlur('password')"
+                        [ngClass]="{'error-input': passwordModel?.touched && passwordModel?.invalid}"
+                    >
+                    <label 
+                        for="password" 
+                        [ngClass]="{
+                            'focused': isFocused['password'] || loginData.password,
+                            'error': passwordModel?.touched && passwordModel?.invalid
+                        }">
+                        Password <span>*</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="login-submit">
+            <div class="check-remember-pw" (click)="onParentClick($event)">
+                <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="loginData.rememberClient">
+                <span (click)="onCheckboxClick($event)">RememberMe</span>
+            </div>
+            <a href="#" [class.disabled]="!isFormValid()" (click)="onLoginClick($event)">Log in</a>
+        </div>
+    </div>
+    <div class="loginWithGg">
+        Log In With Google
+    </div>
+</div>

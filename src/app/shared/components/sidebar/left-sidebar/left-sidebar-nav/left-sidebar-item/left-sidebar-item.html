@@ -1,0 +1,14 @@
+<li class="list-component">
+  <a [routerLink]="routerLink" routerLinkActive="active" [ngClass]="{ 'active': isDropdownVisible }" (click)="toggleDropdown()">
+    <i class="material-icons">{{ icon }}</i>
+    <span>{{ title }}</span>
+  </a>
+  <ul *ngIf="isDropdownVisible" class="mini-nav">
+    <li *ngFor="let option of options; trackBy: trackById;">
+      <a [routerLink]="option.link" routerLinkActive="active">
+        <i class="material-icons">{{ option.icon }}</i>
+        <span>{{ option.label }}</span>
+      </a>
+    </li>
+  </ul>
+</li>

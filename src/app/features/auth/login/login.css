@@ -1,0 +1,36 @@
+.login-container {
+    margin: auto;
+    text-align: center;
+    max-width: 360px;
+    opacity: .5;
+    transform: translateX(-10%);
+    animation: slideIn .5s ease-out forwards;
+}
+
+.login-logo a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: var(--size-4xl);
+}
+
+.login-footer {
+    color: var(--white-color);
+    font-size: var(--size-s);
+    margin-top: var(--size-4xl);
+}
+
+.login-footer span {
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: .5;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
