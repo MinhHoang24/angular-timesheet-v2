@@ -5,15 +5,15 @@
         </div>
         <div>
             <a [routerLink]="['./my-profile']" routerLinkActive="active" class="my-profile-link">
-                <div class="name">admin admin</div>
-                <div class="email">admin@aspnetboilerplate.com</div>
+                <div class="name">{{ name }}</div>
+                <div class="email">{{ email }}</div>
             </a>
         </div>
     </div>
     <div class="btn-group user-helper-dropdown">
         <i class="material-icons open-menu" (click)="openMenu($event)">keyboard_arrow_down</i>
-        <ul [ngClass]="{'show': isMenuOpen}" (click)="handleLogout()" class="dropdown-menu pull-right">
-            <li>
+        <ul [ngClass]="{'show': isMenuOpen}" class="dropdown-menu pull-right">
+            <li (click)="handleLogout()">
                 <a>
                     <i class="material-icons logout">input</i>
                     <span>Logout</span>

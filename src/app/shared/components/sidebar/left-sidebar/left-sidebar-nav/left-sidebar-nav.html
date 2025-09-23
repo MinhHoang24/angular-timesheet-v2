@@ -12,12 +12,16 @@
         <app-left-sidebar-item
             title="Admin"
             icon="admin_panel_settings"
-            [routerLink]="['javascript:void(0);']"
+            [routerLink]="['']"
             [options]="[
-                { label: 'Users', icon: 'admin_panel_settings', link: ['./my-profile'] },
-                { label: 'Users', icon: 'admin_panel_settings', link: ['./admin'] },
-                { label: 'Users', icon: 'admin_panel_settings', link: ['./management'] },
-                { label: 'Users', icon: 'admin_panel_settings', link: ['./timesheet'] },
+                { label: 'Users', icon: 'people', link: ['./'] },
+                { label: 'Roles', icon: 'local_offer', link: ['./'] },
+                { label: 'Configuration', icon: 'settings_applications', link: ['./'] },
+                { label: 'Clients', icon: 'people_outline', link: ['./'] },
+                { label: 'Clients', icon: 'people_outline', link: ['./'] },
+                { label: 'Clients', icon: 'people_outline', link: ['./'] },
+                { label: 'Clients', icon: 'people_outline', link: ['./'] },
+                { label: 'Clients', icon: 'people_outline', link: ['./'] },
             ]"
         >
         </app-left-sidebar-item>
@@ -25,12 +29,12 @@
         <app-left-sidebar-item
             title="Personal timesheet"
             icon="account_circle"
-            [routerLink]="['javascript:void(0);']"
+            [routerLink]="['']"
             [options]="[
-                { label: 'Users', icon: 'account_circle', link: [''] },
-                { label: 'Users', icon: 'account_circle', link: [''] },
-                { label: 'Users', icon: 'account_circle', link: [''] },
-                { label: 'Users', icon: 'account_circle', link: [''] },
+                { label: 'My timesheet', icon: 'alarm', link: [''] },
+                { label: 'My off/remote/onsite requests', icon: 'event_busy', link: [''] },
+                { label: 'Team working calendar', icon: 'groups', link: [''] },
+                { label: 'My working time', icon: 'today', link: [''] },
             ]"
         >
         </app-left-sidebar-item>
@@ -38,7 +42,7 @@
         <app-left-sidebar-item
             title="Management"
             icon="group_work"
-            [routerLink]="['javascript:void(0);']"
+            [routerLink]="['']"
             [options]="[
                 { label: 'Users', icon: 'group_work', link: [''] },
                 { label: 'Users', icon: 'group_work', link: [''] },

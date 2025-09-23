@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LoginData } from '../../../../../core/models/login.model';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../../../core/services/auth.service';
+import { AuthService } from '../../../../../core/services/AuthServices/auth.service';
 
 @Component({
   selector: 'app-login-component',
@@ -20,7 +20,7 @@ export class LoginComponent {
   };
   isFocused: { [key: string]: boolean } = { 'username': false, 'password': false };
 
-  // constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   isFormValid(): boolean {
     return (
@@ -55,19 +55,17 @@ export class LoginComponent {
     } else {
       console.log('Login Data:', this.loginData);
       // call api
-      // this.authService.login(this.loginData).subscribe(
-      //   response => {
-      //     console.log('login successful', response);
-
-      //     if(response.accesToken) {
-      //       localStorage.setItem('accessToken', response.accessToken);
-      //     }
-      //     this.router.navigate(['/']);
-      //   },
-      //   error => {
-      //     console.log('login failed', error);
-      //   }
-      // );
+      this.authService.login(this.loginData).subscribe({
+        next: (response) => {
+          console.log('login successful', response);
+          
+          this.router.navigate(['/']);
+        },
+        error: (error) => {
+          console.log('login failed (comp)', error);
+        },
+        complete: () => { console.log('Stream completed'); }
+      });
     }
     event.preventDefault();
   }

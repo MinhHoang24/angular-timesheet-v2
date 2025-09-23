@@ -29,7 +29,6 @@
 }
 
 .list-component a span {
-    font-weight: 700;
     color: var(--black-color);
     font-size: 14px;
 }
@@ -40,4 +39,12 @@ a.router-link-active {
 
 .mini-nav {
     list-style: none;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.option {
+    font-weight: 400;
 }

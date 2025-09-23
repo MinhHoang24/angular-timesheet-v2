@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, HostListener } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-left-sidebar-header',
@@ -9,9 +9,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './left-sidebar-header.css'
 })
 export class LeftSidebarHeader {
+  @Input() name: string = '';
+  @Input() email: string = '';
+  
   isMenuOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private router: Router) {}
 
   openMenu(event: MouseEvent): void {
     event.stopPropagation();
@@ -21,6 +24,9 @@ export class LeftSidebarHeader {
 
   handleLogout(): void {
     console.log('log out');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('userId');
+    this.router.navigate(['/login']);
   }
 
   @HostListener('document:click', ['$event'])
