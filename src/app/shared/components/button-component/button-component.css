@@ -1,0 +1,38 @@
+.mat-flat-button.mat-primary {
+    position: relative;
+    display: inline-block;
+    padding: 0 16px;
+    color: var(--white-color);
+    border-radius: 4px;
+    background: var(--primary-btn-color);
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* box-shadow: 0 0 0 0 rgba(0, 0, 0, .2), 0 0 0 0 rgba(0, 0, 0, .14), 0 0 0 0 rgba(0, 0, 0, .12); */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, .16), 0 2px 10px rgba(0, 0, 0, .12); */
+}
+
+button .ripple {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}

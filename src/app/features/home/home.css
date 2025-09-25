@@ -1,7 +1,11 @@
-.main-content {
+.background {
     position: fixed;
     top: 72px;
     right: 0;
     width: calc(100vw - 300px);
     height: 1000px;
+}
+
+.main-content {
+    margin: 26px 46px 26px 30px;
 }

@@ -22,4 +22,12 @@ export class UserService {
             : new HttpHeaders();
         return this.baseService.get<any>(`/services/app/User/Get`, { params, headers } );
     }
+
+    GetAllPermissions(): Observable<any>{
+        const token = this.authService.getAccessToken();
+        const headers = token 
+            ? new HttpHeaders().set('Authorization', `Bearer ${token}`)
+            : new HttpHeaders();
+        return this.baseService.get<any>(`/services/app/Role/GetAllPermissions`, { headers })
+    }
 }

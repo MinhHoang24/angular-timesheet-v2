@@ -1,14 +1,17 @@
 <li class="list-component">
-  <a [routerLink]="routerLink" routerLinkActive="active" [ngClass]="{ 'active': isDropdownVisible }" (click)="toggleDropdown()">
-    <i class="material-icons">{{ icon }}</i>
-    <span class="tilte">{{ title }}</span>
+  <a 
+    [routerLink]="['./timesheet']"
+    routerLinkActive="active" 
+    [ngClass]="{ 'active': isDropdownVisible }" 
+    (click)="toggleDropdown()"
+    *ngFor="let item of items; trackBy: trackById"
+  >
+    <i class="material-icons">people</i>
+    <span class="tilte">{{ item }}</span>
   </a>
   <ul *ngIf="isDropdownVisible" class="mini-nav">
-    <li *ngFor="let option of options; trackBy: trackById;">
-      <a [routerLink]="option.link" routerLinkActive="active">
-        <i class="material-icons">{{ option.icon }}</i>
-        <span class="option">{{ option.label }}</span>
-      </a>
+    <li>
+      <app-left-sidebar-mini-item></app-left-sidebar-mini-item>
     </li>
   </ul>
 </li>

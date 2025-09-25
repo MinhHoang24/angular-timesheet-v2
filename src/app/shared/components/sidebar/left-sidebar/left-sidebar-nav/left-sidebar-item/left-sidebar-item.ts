@@ -1,19 +1,20 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LeftSidebarMiniItem } from "./left-sidebar-mini-item/left-sidebar-mini-item";
 
 @Component({
   selector: 'app-left-sidebar-item',
   standalone: true,
-  imports: [RouterLink, NgIf, NgFor, NgClass],
+  imports: [RouterLink, NgIf, NgClass, LeftSidebarMiniItem, NgFor],
   templateUrl: './left-sidebar-item.html',
   styleUrl: './left-sidebar-item.css'
 })
 export class SidebarItemComponent {
   @Input() title: string = '';
   @Input() icon: string = '';
-  @Input() routerLink: string[] = [];
-  @Input() options: { label: string, icon: string, link: string[] }[] = [];
+
+  @Input() items: string[] = [];
 
   isDropdownVisible: boolean = false;
 

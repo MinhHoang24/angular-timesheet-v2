@@ -1,1 +1,23 @@
-<p>timesheet works!</p>
+<div class="timesheet-wrapper">
+    <div class="card calendar">
+        <div class="calendar-head">
+            <div class="today">
+                <h3>2025-09-24</h3>
+            </div>
+            <div class="btns">
+                <app-button-component [buttonText]="'Refresh'"></app-button-component>
+                <app-button-component [buttonText]="'Today'"></app-button-component>
+                <app-mat-button-toggle-group></app-mat-button-toggle-group>
+            </div>
+        </div>
+        <div class="calendar-body">
+            calendar-body
+        </div>
+    </div>
+    <div class="card summary">
+        Summary
+    </div>
+    <div class="card tardiness">
+        Check in punishments
+    </div>
+</div>

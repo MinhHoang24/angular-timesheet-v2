@@ -1,0 +1,12 @@
+.mat-button-toggle-button {
+    height: 50px;
+    color: rgba(0,0,0,.87);
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .12);
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+
+.mat-button-toggle-button.checked {
+    background-color: #e0e0e0;
+}

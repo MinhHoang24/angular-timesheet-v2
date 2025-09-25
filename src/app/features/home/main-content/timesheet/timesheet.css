@@ -1,0 +1,22 @@
+.timesheet-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color: var(--white-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+.calendar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btns {
+    display:  flex;
+    column-gap: 10px;
+}
